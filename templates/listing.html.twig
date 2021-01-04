@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Liste des taches
+{% endblock %}
+
+{% block body %}
+    <ul>
+    {% for listing in listings %}
+    <li>{{ listing.name }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
