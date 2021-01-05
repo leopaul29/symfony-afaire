@@ -5,9 +5,24 @@ Liste des taches
 {% endblock %}
 
 {% block body %}
-    <ul>
+<div class="col-md-3">
+    <ul class="list-group">
+
     {% for listing in listings %}
-    <li>{{ listing.name }}</li>
+    <li class="list-group-item">{{ listing.name }}</li>
     {% endfor %}
+    <li class="list-group-item">
+    <form method="post" action={{ path('listing_create') }}>
+        <div class="input-group mb-2">
+            <input type="text" placeholder="ajouter une liste" class="form-control" name="name"/>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-primary" type="submit">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    </li>
     </ul>
+</div>
 {% endblock %}
